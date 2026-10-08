@@ -1,0 +1,36 @@
+=== Набір: UA-MT-NAZ; i=0; мітка набору: позитивна; p_ВММ=0.9466; p_XLM-R=0.9993; p_LR=0.7181
+--- Лист (початок):
+Report- email-Quota Restriction. Редактор HTML - Webmail Webmail Ваша поштова скринька перевищила обмеження на поштову скриньку. У вас на хмарі було зібрано листи {17}, які очікують на ваше підтвердження доставки. Ми звертаємо увагу на те, що це зробить повідомлення непридатними для розповсюдження. Полагодь цю проблему тепер: 1. Продовжуйте випускати повідомлення 2. Скринька очищення © 2020- 2020
+--- Пояснення ВММ:
+Цей лист може бути використаний для фішингу, оскільки він намагається отримати відповідь від користувача, який може повернутися до сайту або додатку, що контролюється нападцями. Ознаки фішингу включають незвичний текст про перевищення обмежень поштової скриньки та запит на підтвердження доставки повідомлень, які можуть бути використані для зм
+
+=== Набір: UA-MT-NAZ; i=67; мітка набору: легітимний; p_ВММ=0.8520; p_XLM-R=0.0001; p_LR=0.0015
+--- Лист (початок):
+3 тека. Якщо ми взагалі зможемо продати, то, ймовірно, доходи будуть меншими, ніж 100 к. - - - - - - - - - - - - - - - - - - - - - переспрямовано багачом ледекером / корком / enron на 04 / 02 / 2001 02: 12 pm - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - moris @ect 04 / 02 / 2001 02: 47 pm to: sard lydecker / cond / enron @ enron cc: тема: 3 tec tec export: 3 tec tags - як нафтові та виробничі компанії. Колишня нафта затоки, компанія працює в основному на східному Техасі та в районі затоки. Він також має властивості у Серединному континенті, в багаторічних та сан-гуан-фунндрах. статус: обсяг обсягу послуг тимчасово призупинено через ринкові умови. По
+--- Пояснення ВММ:
+Цей лист є спамом. Ознаки цього полягають в неформальному стилі написання, використанні нестандартного формату дати та часу, а також неочікуваних термінів та абревіатур (наприклад, "tec", "enron", "reporror"), які не мають зв'язку з реальними комерційними або фінансовими термінами.
+
+=== Набір: EN-EXT; i=2; мітка набору: позитивна; p_ВММ=1.0000; p_XLM-R=0.9966; p_LR=0.7761
+--- Лист (початок):
+Re: Get Approved and Funded TODAY. Hello Business Owner, Lisa Wilson has sent you a new DocuSign document to view and sign. Please click on the link below to begin signing. Hello, we received your inquiry for funding and can have your business approved within minutes. Terms up to 18 months with weekly payment options. We are a direct lender and can have you approved within minutes. APPLY NOW to see what you are approved for. Complete the Docusign application & also attach the last 6 months of your business bank statements. If you have trouble attaching, you can reply back to this email with the statements or fax statements to 516-331-0696. Our direct line is 516-331-0689. To unsubscribe: htt
+--- Пояснення ВММ:
+Цей лист є фішинговим через використання DocuSign і просимо надати персональні дані (банковські ствердження), які можна звернути проти вас. Ознаки фішингу - використання незвичного електронного адресу, нестандартних запитів на дії (такі як підписування документів без виду на них) та вимога надсилати конфіденційні дані через електронну пошту або факс.
+
+=== Набір: EN-EXT; i=0; мітка набору: легітимний; p_ВММ=0.0001; p_XLM-R=0.0001; p_LR=0.0013
+--- Лист (початок):
+co - owner vols 12 / 00. for anyone else who needs it . bev - - - - - - - - - - - - - - - - - - - - - - forwarded by beverly beaty / hou / ect on 11 / 27 / 2000 11 : 01 am - - - - - - - - - - - - - - - - - - - - - - - - - - - enron capital & trade resources corp . from : " victor haley " 11 / 27 / 2000 11 : 27 am to : , cc : subject : co - owner vols 12 / 00 co - owner vols 12 / 00 - 1200 co - owners volumes to enron . xls
+--- Пояснення ВММ:
+Цей лист не здається фішинговим, шахрайським або спамом. Він просто передає документ Excel ("co-owner vols 12/00 - 1200 co-owners volumes to enron") та має дату та час передачі, а також ім'я передавача (Beverly Beatty). Ознаки цього — відсутність неправильних URL, просьб про персональні дані або необычных треб, а також конкретная информация о передаче файла внутри компании.
+
+=== Набір: EN; i=0; мітка набору: позитивна; p_ВММ=1.0000; p_XLM-R=0.9995; p_LR=0.9989
+--- Лист (початок):
+PROMOTE YOUR PRODUCT OR SERVICE TO MILLIONS TODAY! Â E-MAIL MARKETING - Bulk e-mail will make you money so fast, your head will spin!- Our customers tell us that they would no longer be in business without it.- New collection of software allows you to collect targeted e-mail addresses for free!Â Â Â See this product's web page CLICK HERE Â 1 MILLION AMERICAN BUSINESS LEADS ON CD- If you do telemarketing, mailing, or faxing this list will be a gold mine! - Contains company name, address, phone, fax, SIC, # of employees & revenue - List allows for UNLIMITED DOWNLOADS! Â Â Â See this product's web page CLICK HERE Â FAX MARKETING SYSTEM - Fax broadcasting is the hot new way to market your produc
+--- Пояснення ВММ:
+Цей лист є спамом та шахрайським. Ознаки цього включають натяжні пропозиції збільшення прибутків швидко, безпідставні ствердження про успіхи інших користувачів, а також навигаційні посилання на сайт для покупки продуктів, які обіцують велику кількість контактних даних.
+
+=== Набір: EN; i=3; мітка набору: легітимний; p_ВММ=0.0000; p_XLM-R=0.0002; p_LR=0.0001
+--- Лист (початок):
+re : wayne tow ' s resume we are supposed to get back to the headhunter . you can send her an e - mail ( please see the first message at the bottom of the page for the address ) . vince greg nikkel @ enron 02 / 02 / 2000 11 : 39 am to : kathy kokas / corp / enron @ enron cc : melissa becker / corp / enron @ enron , john gillespie / corp / enron @ enron , vince j kaminski / hou / ect @ ect subject : re : wayne tow ' s resume i will set - up a phone interview with him to assess his qualifications and interest in the hr application support lead position . vince , how was it left with the headhunter on how to contact him ? greg from : kathy kokas 02 / 02 / 2000 09 : 16 am to : melissa becker / c
+--- Пояснення ВММ:
+Цей лист не виглядає як фішинговий, шахрайський чи спамовий. Він здається повним інформаційним відповідно до обговорення резюме одного працівника Wayne Towу та планування телефонного розмови для оцінки його кваліфікації. Листи передаються між різними корпоративними контактами Enron та обговорюють роботу з головохідниками та резюме претендент
+

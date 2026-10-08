@@ -1,0 +1,95 @@
+﻿id,sha256_16_first1200,label,channel,kind,source,url,date
+1,73b8530a984b59d1,1,Telegram / дзвінки,Шахраї від імені «підтримки mono» погрожують блокуванням карток,dev.ua (за дописами постраждалих),https://dev.ua/news/korystuvachi-monobank-skarzhatsia-na-novu-shakhraisku-skhemu-iz-zboramy-na-banky-shakhrai-predstavliaiutsia-pidtrymkoiu-mono-i-vymahaiut-uvid-iuzeriv-pevnykh-dii-yak-ne-popastysia-na-hachok-1736683773,2025-01-12
+2,c14318a5a0f120b7,1,SMS,SMS від імені Укрпошти про посилку / оновлення даних,Фокус (за Укрпоштою),https://focus.ua/uk/digital/618874-shahrayi-rozsilayut-ukrayincyam-nebezpechni-listi-vid-imeni-ukrposhti-yak-ne-stati-zhertvoyu,2024-01-10
+3,e08904ddae1607e9,1,SMS,SMS «нібито від пошти» (Укрпошта) про сплату за переадресацію посилки,Суспільне Черкаси (за ГУНП Черкащини),https://suspilne.media/cherkasy/718158-vam-prijsla-posilka-cerkasan-poperedzaut-pro-sahrajsku-shemu/,2024-04-07
+4,7cbcb1488c345c8b,1,E-mail,Е-листи про «заборгованість перед Новою поштою»,Главком (за ЦПД),https://glavcom.ua/country/society/fejkovi-povidomlennja-vid-novoji-poshti-tspd-poperediv-pro-fishinhovu-rozsilku-1090241.html,2025-11-26
+5,4bbe9267a398d6b6,1,Месенджери / SMS,"Повідомлення від імені Vodafone / lifecell / Київстар (бонуси, крадіжка карткових даних)",Фокус (за проєктом BRAMA),https://focus.ua/uk/digital/730710-kradut-bankivski-dani-shahraji-masovo-vidayut-sebe-za-vodafone-lifecell-ta-kijivstar,2025-10-29
+6,0096ead29ed4e797,1,E-mail (організації),Листи «Заборгованість Київстар» і «Запит СБУ» з RemcosRAT (UAC-0050),CERT-UA,https://cert.gov.ua/article/6276824,2023-12-21
+7,ce68a08b009f8195,1,Месенджери / e-mail,Підроблена квитанція за електроенергію (від імені Міненерго / постачальника),Фокус (за ЦПД),https://focus.ua/uk/economics/756723-feykovi-rahunki-za-svitlo-ukrajinciv-poperedili-pro-novu-shemu,2026-06-05
+8,778fd159213f849e,1,E-mail,Листи «від Дії» про щорічне податкове відшкодування,Фокус (за ДПС і ЦПД),https://focus.ua/uk/ukraine/691740-shchorichne-podatkove-vidshkoduvannya-ukrajinci-otrimuyut-feykovi-listi,2025-02-03
+9,c8363d88d7da52e3,1,E-mail (організації),Лист «від Одеського ОТЦК та СП» з PDF-вкладенням (поштова скринька gmail),dev.ua (за нардепом О. Федієнком),https://dev.ua/news/fediienko-fishynhovi-lysty,2025-02-03
+10,37c17ac155b2a903,1,E-mail (організації),"Листи «від СБУ» з вимогою до організації, фейкове поновлення SSL, «внутрішні» сповіщення",dev.ua (за De Novo),https://dev.ua/news/zvenyhor-1773062445,2026-03-09
+11,643001c18a5ee222,1,E-mail (організації),"«Повістка до суду» від імені господарського суду (UAC-0050, RemcosRAT)",CERT-UA,https://cert.gov.ua/article/6276567,2023-11-30
+12,df369b61c3471c5e,1,E-mail (організації),«Повідомлення про порушення» від імені держорганів / судів (UAC-0099),CERT-UA,https://cert.gov.ua/article/6281681,2024-12-14
+13,71f3431429af964b,1,E-mail (організації),"Листи податкової тематики (ДПС) для бухгалтерів, LITEMANAGER (UAC-0050)",CERT-UA,https://cert.gov.ua/article/6281202,2024-10-30
+14,91e92677014e1965,1,SMS / месенджер,Повідомлення від імені керівництва обласної поліції з проханням «підтвердити дані»,Суспільне Черкаси (за ГУНП Черкащини),https://suspilne.media/cherkasy/779027-vid-imeni-kerivnictva-policii-prosat-pidtverditi-dani-nova-sahrajska-shema-na-cerkasini/,2024-06-29
+15,d10f5c7987593d46,1,SMS,Фейкові SMS про штрафи ПДР з посиланням на оплату,"Finance.ua (за О. Білошицьким, патрульна поліція)",https://news.finance.ua/ua/policiya-poperedyla-pro-novu-shemu-shahraystva-zi-shtrafamy-za-porushennya-pdr,2026-06-04
+16,e0810eb91528b995,1,WhatsApp,Викрадення WhatsApp під виглядом голосування за е-петиції,CERT-UA,https://cert.gov.ua/article/6278735,2024-04-20
+17,57d4acf4368c89b2,1,WhatsApp,Те саме: повідомлення про «підписання петиції» у WhatsApp,Фокус,https://focus.ua/uk/digital/640321-rosiyski-hakeri-namagayutsya-vkrasti-dani-pro-zsu-cherez-whatsapp-yak-ne-potrapiti-v-pastku,2024-04-15
+18,84e3681f245de14d,1,SMS / Telegram / WhatsApp,«Проголосуй за учасника конкурсу»: викрадення акаунтів,CERT-UA,https://cert.gov.ua/article/6279491,2024-05-30
+19,0853dbd6d764c3e7,1,Telegram,Фішингові повідомлення в Telegram для захоплення акаунта (фейковий Telegram Web),Фокус,https://focus.ua/uk/digital/544911-messendzher-telegram-opyat-atakuyut-hakery-kak-ne-stat-zhertvoy-vzloma,2023-01-12
+20,a9e61105dac88055,1,Telegram,Шкідливі повідомлення від «техпідтримки Резерв+»,CERT-UA,https://cert.gov.ua/article/6281018,2024-10-16
+21,b65eb00bf715aa93,1,E-mail (організації),Лист «Наказ №…» зі скомпрометованої скриньки закладу освіти (UAC-0241),CERT-UA,https://cert.gov.ua/article/6286219,2025-11-18
+22,3081280953ae09dc,1,E-mail (організації),Листи «від CERT-UA» з вимогою завантажити «засіб захисту» (UAC-0255),CERT-UA,https://cert.gov.ua/article/6288047,2026-03-28
+23,4dc61b24cac44c12,1,email,обмеження облікового запису / оновлення даних,"Ощадбанк (голова правління С. Наумов), через медіа Тиждень/ukrainianwall",https://week.ukrainianwall.com/144220-tak-viglyadaye-list-vid-shahrajiv-oshchadbank-terminovo-poperediv-kliyentiv-pokazhit-ce-ridnim-ta-blizkim,2025-04-22
+24,07db569937c0d1a2,1,SMS/messenger,"фейковий подарунок 1000 грн, фішинг Приват24","ПриватБанк (пресслужба), через УНІАН/Рубрика — ПРИМІТКА: публікація 2022 р., не 2025-2026",https://rubryka.com/2022/01/06/z-yavylasya-nova-shahrajska-shema-shhodo-podarovanoyi-tysyachi-gryven/,2022-01-06
+25,db9172dcb9e5c419,1,SMS,затримка посилки / фішингове посилання,"Нова пошта (офіційний Telegram), через Дебет-Кредит",https://news.dtkt.ua/society/community/103495-uvaga-saxraiski-sms-vid-imeni-novoyi-posti,2025-09-25
+26,c4d1ffe990b4f79b,0,email,mailing_list,kde-i18n-uk (KDE),https://mail.kde.org/pipermail/kde-i18n-uk/2025-September/000034.html,2025-09-14
+27,812e461c189b4fc6,0,email,mailing_list,kde-i18n-uk (KDE),https://mail.kde.org/pipermail/kde-i18n-uk/2025-September/000035.html,2025-09-15
+28,dc3ab79cd1e93298,0,email,mailing_list,kde-i18n-uk (KDE),https://mail.kde.org/pipermail/kde-i18n-uk/2025-September/000036.html,2025-09-15
+29,73bf3357575298ba,0,email,mailing_list,kde-i18n-uk (KDE),https://mail.kde.org/pipermail/kde-i18n-uk/2025-September/000037.html,2025-09-15
+30,418dd3424ffb4c66,0,email,mailing_list,kde-i18n-uk (KDE),https://mail.kde.org/pipermail/kde-i18n-uk/2025-September/000038.html,2025-09-15
+31,8b187ca382917678,0,SMS,notification,ДСНС України,https://www.kmu.gov.ua/news/mvs-trivaye-testuvannya-operativnogo-informuvannya-naselennya-pro-zagrozi-za-dopomogoyu-kiyivstar-vodafone-ta-lifecell,2022-06-17
+32,80ec9e452c72b883,0,email,mailing_list,Ubuntu Ukrainian Translators (Launchpad team list ~ukraine),https://archive.lists.launchpad.net/ukraine/msg00000.html,2009-08-14
+33,d1304fe259d4d0b8,0,email,mailing_list,Ubuntu Ukrainian Translators (Launchpad team list ~ukraine),https://archive.lists.launchpad.net/ukraine/msg00001.html,2009-10-07
+34,c0fc00b73fcc8f97,0,email,mailing_list,Ubuntu Ukrainian Translators (Launchpad team list ~ukraine),https://archive.lists.launchpad.net/ukraine/msg00002.html,2009-10-15
+35,3813fae772928cbd,0,email,mailing_list,Ubuntu Ukrainian Translators (Launchpad team list ~ukraine),https://archive.lists.launchpad.net/ukraine/msg00003.html,2009-11-03
+36,a2b2ca6fff623ad5,0,email,mailing_list,Ubuntu Ukrainian Translators (Launchpad team list ~ukraine),https://archive.lists.launchpad.net/ukraine/msg00047.html,2011-02-01
+37,421a8c68bb6ebbad,0,email,mailing_list,Launchpad Ukrainian Translators (lp-l10n-uk),https://archive.lists.launchpad.net/lp-l10n-uk/msg00000.html,2010-12-13
+38,796efe7bb07eb20c,0,email,mailing_list,Launchpad Ukrainian Translators (lp-l10n-uk),https://archive.lists.launchpad.net/lp-l10n-uk/msg00001.html,2016-12-24
+39,7404ae4968fbd1e1,0,email,mailing_list,Launchpad Ukrainian Translators (lp-l10n-uk),https://archive.lists.launchpad.net/lp-l10n-uk/msg00004.html,2017-07-22
+40,08bda17c814190c6,0,SMS,notification,ДСНС України,https://glavcom.ua/techno/telecom/ukrajintsi-masovo-otrimujut-na-telefoni-spovishchennja-vid-dsns-885818.html,2022-10-31
+41,98eb1f2667793666,0,SMS,notification,Vodafone Україна,https://www.unian.ua/techno/communications/vodafone-zapustiv-novu-bezkoshtovnu-poslugu-yak-skoristatisya-detalna-instrukciya-amp-11877642.html,2022-06-25
+42,e410fd7b537d88c5,0,SMS,notification,Vodafone Україна,https://www.unian.ua/techno/communications/vodafone-zapustiv-novu-bezkoshtovnu-poslugu-yak-skoristatisya-detalna-instrukciya-amp-11877642.html,2022-06-25
+43,c3a73c3d8c65535c,0,SMS,notification,ЦНАП Львівської міської ради,https://zaxid.net/lvivska_miskrada_zaprovadila_zmzinformuvannya_meshkantsiv_n1282920,2013-04-15
+44,f423929a3201f6e6,0,SMS,notification,Київстар / Мінреінтеграції,https://www.kmu.gov.ua/news/kiyivstar-pochav-sms-rozsilku-z-minnoyi-bezpeki,2022-11-05
+45,2aaf91139418092a,0,SMS,notification,Київстар,https://www.unian.ua/economics/telecom/u-kijivstari-poyasnili-divni-sms-z-propoziciyeyu-zaminiti-sim-kartu-novini-amp-11454712.html,2021-06-15
+46,c9de2dc0914ed38d,0,other,notification,ДСНС України,https://armyinform.com.ua/2024/01/22/oberezhno-fejk-ukrayinczyam-pochaly-nadsylaty-povidomlennya-pro-evakuacziyu/,2024-01-22
+47,403fb38556b12947,0,email,mailing_list,"translation-team-uk (Translation Project, SourceForge)",https://sourceforge.net/p/translation/mailman/message/36583256/,2019-02-10
+48,25a9a79dea5fe5fe,0,email,mailing_list,"translation-team-uk (Translation Project, SourceForge)",https://sourceforge.net/p/translation/mailman/message/36244476/,2018-03-05
+49,1e92489f9dfe37ee,0,email,mailing_list,"translation-team-uk (Translation Project, SourceForge)",https://sourceforge.net/p/translation/mailman/message/36185291/,2018-01-10
+50,07708c3549780c7b,0,email,mailing_list,"ispell-uk-develop (spell-uk, SourceForge)",https://sourceforge.net/p/ispell-uk/mailman/message/2187027/,2006-11-08
+51,47487681c29f6b58,0,email,mailing_list,"ispell-uk-develop (spell-uk, SourceForge)",https://sourceforge.net/p/ispell-uk/mailman/message/2187022/,2005-11-06
+52,b6febd491cd122f7,0,email,mailing_list,"ispell-uk-develop (spell-uk, SourceForge)",https://sourceforge.net/p/ispell-uk/mailman/message/2187026/,2005-11-09
+53,c409422929832b81,0,email,mailing_list,"ispell-uk-develop (spell-uk, SourceForge)",https://sourceforge.net/p/ispell-uk/mailman/message/2187001/,2005-10-25
+54,0bc1dac946cd78ea,0,email,mailing_list,"ispell-uk-develop (spell-uk, SourceForge)",https://sourceforge.net/p/ispell-uk/mailman/message/2186988/,2005-10-24
+55,bafa17d69dc9ae9b,0,email,mailing_list,"ispell-uk-develop (spell-uk, SourceForge)",https://sourceforge.net/p/ispell-uk/mailman/message/2186974/,2005-10-02
+56,da017aab8ff0fa25,0,email,mailing_list,"ispell-uk-develop (spell-uk, SourceForge)",https://sourceforge.net/p/ispell-uk/mailman/message/2186962/,2005-09-25
+57,d2ea9912ce0963e4,0,email,mailing_list,"translation-team-uk (Translation Project, SourceForge)",https://sourceforge.net/p/translation/mailman/message/36173314/,2017-12-31
+58,d29c24632c2b68b7,0,email,mailing_list,"ispell-uk-develop (spell-uk, SourceForge)",https://sourceforge.net/p/ispell-uk/mailman/message/2186963/,2005-09-27
+59,ba300be2891c4316,0,email,mailing_list,"ispell-uk-develop (spell-uk, SourceForge)",https://sourceforge.net/p/ispell-uk/mailman/message/2186984/,2005-10-23
+60,9f12e5ea8c3b7d04,0,messenger,notification,Дія (Мінцифри),https://t.me/diia_gov/6123,2026-09-17
+61,800c9c5fd9db4db6,0,messenger,notification,Дія (Мінцифри),https://t.me/diia_gov/6125,2026-09-18
+62,436c0e77e72bf9d7,0,messenger,notification,Дія (Мінцифри),https://t.me/diia_gov/6132,2026-09-24
+63,d0399cf21cf07e71,0,messenger,newsletter,Дія (Мінцифри),https://t.me/diia_gov/6133,2026-09-25
+64,7da3fc77c312f83a,0,messenger,newsletter,Дія (Мінцифри),https://t.me/diia_gov/6120,2026-09-11
+65,883370ba8bdbbf0f,0,messenger,notification,Укрзалізниця,https://t.me/UkrzalInfo/8536,2026-10-02
+66,f309beba240077b5,0,messenger,notification,Укрзалізниця,https://t.me/UkrzalInfo/8524,2026-09-23
+67,212f49577419a7e4,0,messenger,newsletter,Державна податкова служба України,https://t.me/tax_gov_ua/6999,2026-10-02
+68,6064a6c717e578ed,0,messenger,notification,"Укрпошта (генеральний директор, Telegram)",https://mezha.ua/2023/06/06/ukrposhta-poperedyla-kliientiv/amp/,2023-06-06
+69,8f8cd2d2ce41c13d,0,other,notification,Нова пошта (пресслужба),https://root-nation.com/ua/news-ua/it-news-ua/ua-nova-poshta-fraud-warning/,2023-12-06
+70,e2a287516e1916af,0,messenger,notification,Київська міська військова адміністрація (КМВА),https://t.me/VA_Kyiv/21170,2026-09-28
+71,eebc6fe4a24c9de6,0,messenger,notification,Київська міська військова адміністрація (КМВА),https://t.me/VA_Kyiv/21185,2026-09-28
+72,4eb82ecb3cbf5aea,0,messenger,notification,ДСНС України,https://t.me/dsns_telegram/76472,2026-10-03
+73,d97453ca24bc8dc8,0,other,notification,Пенсійний фонд України,https://zn.ua/ukr/ECONOMICS/pfu-poperediv-pro-shakhrajiv.html,2024-04-05
+74,a76ca80e32d609ea,0,email,newsletter,"«Повільна людина» (авторська e-mail розсилка, Buttondown)",https://buttondown.com/suvij/archive/povilna-liudina-vipusk-10/,2019-12-31
+75,2482f5c67966cd82,0,email,newsletter,"«Повільна людина» (авторська e-mail розсилка, Buttondown)",https://buttondown.com/suvij/archive/povilna-liudina-vipusk-9/,2019-12-05
+76,ce024c2d015c43d5,0,email,newsletter,"«Повільна людина» (авторська e-mail розсилка, Buttondown)",https://buttondown.com/suvij/archive/sezon-docudays-ua-online/,2020-04-24
+77,6cd2e6ddf04e1abd,0,SMS,notification,"Мінреінтеграції (через Vodafone, lifecell, Київстар)",https://armyinform.com.ua/2022/10/12/minreintegracziyi-aktyvizuvalo-sms-informuvannya-naselennya-pro-minnu-nebezpeku/,2022-10-12
+78,312f39f151f4fcc5,0,messenger,newsletter,Дія (Мінцифри),https://t.me/diia_gov/6129,2026-09
+79,212f2a214a8101c6,0,messenger,newsletter,Дія (Мінцифри),https://t.me/diia_gov/6131,2026-09
+80,9a7ae18d19b2ccee,0,messenger,newsletter,Дія (Мінцифри),https://t.me/diia_gov/6135,2026-09
+81,3835e35f9e50ee3b,0,messenger,newsletter,Укрзалізниця,https://t.me/UkrzalInfo/8529,2026-10-01
+82,ef39cb351778b729,0,messenger,newsletter,Укрзалізниця,https://t.me/UkrzalInfo/8530,2026-10
+83,45e1232d6784f340,0,messenger,newsletter,НЕК «Укренерго»,https://t.me/Ukrenergo/5474,2026-10-01
+84,530d17b2749dcb92,0,messenger,newsletter,Державна податкова служба України,https://t.me/tax_gov_ua/6988,2026-10-01
+85,40f0b1d9462ac348,0,other,notification,Ощадбанк (опис оновлення застосунку),https://thepage.ua/ua/news/privatbank-oshadbank-monobank-vidmovilisya-vid-rosijskoyi,2022-10-12
+86,c74b77f84bf804bf,0,messenger,newsletter,Мінцифри,https://t.me/mintsyfra/8398,
+87,53affd1a231fa775,0,messenger,newsletter,Мінцифри,https://t.me/mintsyfra/8401,
+88,dae4fbd6f61c5bf0,0,messenger,notification,НЕК «Укренерго»,https://t.me/Ukrenergo/5466,2026-09-30
+89,3e10cb9d2718cab3,1,E-mail,Лист від імені НАБУ: повістка про виклик підозрюваного,"НАБУ (Facebook), копія LB.ua",https://lb.ua/society/2026/04/30/735666_nabu_poperedzhaie_pro_fishingovi.html,2026-04-30
+90,55c919bcdaae5c10,1,Viber,Viber: «виплата від УСЗН ООН» (лише перше повідомлення),ЦПД (Telegram),https://t.me/CenterCounteringDisinformation/17441,2026-03-13
+91,e6a17cca647a6a9b,1,Viber,Viber: «компенсація від Укренерго» (лише друге повідомлення),ЦПД (Telegram),https://t.me/CenterCounteringDisinformation/17441,2026-03-13
+92,4a947c439aa11f9f,1,E-mail (організації),Лист «Оновлення Windows» (тема і текст без заголовків і команди),CERT-UA,https://cert.gov.ua/article/4492467,2023-04-28
+93,ffaa8dd1823decc9,1,SMS,SMS «SUDpovistka» від імені суду,CERT-UA,https://cert.gov.ua/article/4789582,2023-06-02
+94,a484188cdca54ac8,1,SMS / месенджер,Фейковий штраф від імені патрульної поліції (обидві колонки разом),Кіберполіція (Telegram),https://t.me/CyberpolUA/5971,2026-06-03
