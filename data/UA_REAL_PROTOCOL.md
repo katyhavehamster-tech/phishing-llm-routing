@@ -22,5 +22,5 @@ The texts are not redistributed (third-party publications). This file documents 
 
 ## Identifiers and hashes
 - `sample_id` (= `id` in the metadata and annotations) corresponds to row `i` = `sample_id − 1` of the UA-REAL block in `results/predictions.csv`; see `ua_real_id_map.csv`.
-- `sha256_16` in `predictions.csv` is the hash of the exact model input (whitespace collapsed, stripped, first 1200 characters). The older `sha256_16_first1200` in the metadata was computed on a different text representation and matches for 32 of 94 items; the link for the others rests on row order and identical labels (94/94).
-- To verify all 94 items with full hashes of both representations, run `python scripts/verify_ua_real.py ua_sample.xlsx` with the local copy of the set; it writes `ua_real_hashes.csv`.
+- `sha256_16` in `predictions.csv` is the hash of the exact model input (whitespace collapsed, stripped, first 1200 characters). `sha256_16_first1200` in the metadata is the hash of the first 1200 characters of the raw text as stored in `ua_sample.xlsx` (no whitespace normalisation), which is why the two short hashes differ for messages containing repeated spaces or line breaks.
+- Verified on 10.10.2026 with the original `ua_sample.xlsx` (`scripts/verify_ua_real.py`): the raw-text hash matches the metadata and the model-input hash matches `predictions.csv` for 94/94 messages, labels and ids match for 94/94. Full 64-character hashes of both representations are in `ua_real_hashes.csv` and `ua_real_id_map.csv`.

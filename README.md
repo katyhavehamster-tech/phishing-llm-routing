@@ -37,7 +37,7 @@ Model revisions were recorded by querying the Hugging Face Hub during the v6 run
 `pip install pandas numpy scipy openpyxl && python scripts/rebuild_tables.py` recomputes, from the saved predictions only: confusion matrices and F1 of all models on all sets (checked against `results_main.csv`), the Holm family of 25 pairwise comparisons, UA-REAL label agreement and label sensitivity, UA-REAL by channel and the supplementary tables A1–A3 (`supplement/README.md`).
 
 ## UA-REAL
-See `data/UA_REAL_PROTOCOL.md` (inclusion and extraction rules, labels, identifiers) and `data/ua_real_id_map.csv` (explicit link between `sample_id`, the rows of `predictions.csv` and the hashes).
+See `data/UA_REAL_PROTOCOL.md` (inclusion and extraction rules, labels, identifiers) and `data/ua_real_id_map.csv` (explicit link between `sample_id`, the rows of `predictions.csv` and full SHA-256 hashes of the raw text and of the model input; verified for 94/94 messages against the original file).
 
 ## Environment
 {

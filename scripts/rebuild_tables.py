@@ -101,11 +101,19 @@ u = pred[pred["набір"] == "UA-REAL"].reset_index(drop=True)
 idmap = pd.DataFrame({"sample_id": meta["id"], "predictions_i": u["i"], "label_metadata": meta["label"],
                       "label_predictions": u["мітка"], "sha256_16_metadata": meta["sha256_16_first1200"],
                       "sha256_16_predictions": u["sha256_16"]})
-idmap["hash_match"] = idmap.sha256_16_metadata == idmap.sha256_16_predictions
-idmap["link_basis"] = np.where(idmap.hash_match, "hash", "row order + label (hash of a different text representation)")
 assert (idmap.label_metadata == idmap.label_predictions).all() and (idmap.sample_id == idmap.predictions_i + 1).all()
+hp = D / "ua_real_hashes.csv"   # written by scripts/verify_ua_real.py from the original ua_sample.xlsx
+if hp.exists():
+    hh = rd(hp)
+    ok = (hh.sha256_model_input.str[:16].values == idmap.sha256_16_predictions.values) & \
+         (hh.sha256_raw_first1200.str[:16].values == idmap.sha256_16_metadata.values)
+    idmap["sha256_raw_first1200"] = hh.sha256_raw_first1200; idmap["sha256_model_input"] = hh.sha256_model_input
+    idmap["link_basis"] = np.where(ok, "full SHA-256 verified (raw text -> metadata, model input -> predictions)", "NOT VERIFIED")
+    report.append(f"UA-REAL id map: {int(ok.sum())}/94 verified by full hashes of both text representations")
+else:
+    idmap["link_basis"] = "row order + label (run scripts/verify_ua_real.py to verify by hashes)"
+    report.append("UA-REAL id map: ua_real_hashes.csv not found; link by row order and labels only")
 idmap.to_csv(D / "ua_real_id_map.csv", index=False, encoding="utf-8-sig")
-report.append(f"UA-REAL id map: {int(idmap.hash_match.sum())}/94 hash-confirmed, labels identical by row order for 94/94")
 
 a = ann.set_index("id").loc[meta["id"]]
 b1 = (a["Клас_1"] != "легітимне").astype(int).values; b2 = (a["Клас_2"] != "легітимне").astype(int).values
