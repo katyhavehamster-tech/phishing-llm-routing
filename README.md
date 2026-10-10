@@ -56,6 +56,9 @@ Parameters: {"N_TEST": 1000, "N_VAL": 1000, "N_TRAIN_XLMR": 10000, "XLMR_SEEDS":
 Main dataset: `zefang-liu/phishing-email-dataset` (Hugging Face). External corpora: Nazario phishing corpus and Enron
 (Phishing Email Curated Datasets).
 
+## Prompt selection
+The prompt wording was chosen in two pilot runs on earlier versions of the data (before the near-duplicate group split): run A asked only about phishing; run B used the broader class definition "phishing, scam/fraud or spam", matching the composition of the positive class of the main dataset. The runs were compared on the EN test set, the external Nazario + Enron set (EXT) and the machine-translated test set (UA-MT); the LLM estimates on these three sets are therefore exploratory. UA-NAZ and UA-REAL were evaluated only with the final prompt; UA-REAL was assembled after the prompt, thresholds and all model parameters had been fixed.
+
 ## Prompts
 System: You are an experienced cybersecurity analyst who filters malicious and unwanted email.
 
