@@ -1,0 +1,95 @@
+﻿sample_id,predictions_i,label_metadata,label_predictions,sha256_16_metadata,sha256_16_predictions,hash_match,link_basis
+1,0,1,1,73b8530a984b59d1,a8ed42394b42d2ef,False,row order + label (hash of a different text representation)
+2,1,1,1,c14318a5a0f120b7,69d25d502ab53808,False,row order + label (hash of a different text representation)
+3,2,1,1,e08904ddae1607e9,253c887e47b9294b,False,row order + label (hash of a different text representation)
+4,3,1,1,7cbcb1488c345c8b,9209e6c4fcd55f3e,False,row order + label (hash of a different text representation)
+5,4,1,1,4bbe9267a398d6b6,319e1fa4370cf9da,False,row order + label (hash of a different text representation)
+6,5,1,1,0096ead29ed4e797,e3a6fbc10e1482e5,False,row order + label (hash of a different text representation)
+7,6,1,1,ce68a08b009f8195,dc4c2eed81e0ea3d,False,row order + label (hash of a different text representation)
+8,7,1,1,778fd159213f849e,d3be8804dd1a9b12,False,row order + label (hash of a different text representation)
+9,8,1,1,c8363d88d7da52e3,535c784b9435fb58,False,row order + label (hash of a different text representation)
+10,9,1,1,37c17ac155b2a903,93e1cad08c059831,False,row order + label (hash of a different text representation)
+11,10,1,1,643001c18a5ee222,78588ee3b80cc138,False,row order + label (hash of a different text representation)
+12,11,1,1,df369b61c3471c5e,845db421474bde66,False,row order + label (hash of a different text representation)
+13,12,1,1,71f3431429af964b,6f77bd57f512faf0,False,row order + label (hash of a different text representation)
+14,13,1,1,91e92677014e1965,31f8167364ed2099,False,row order + label (hash of a different text representation)
+15,14,1,1,d10f5c7987593d46,194e7463b4cf9800,False,row order + label (hash of a different text representation)
+16,15,1,1,e0810eb91528b995,14915093c5846f59,False,row order + label (hash of a different text representation)
+17,16,1,1,57d4acf4368c89b2,b8834eb7d0151fbf,False,row order + label (hash of a different text representation)
+18,17,1,1,84e3681f245de14d,0631a217ff07305c,False,row order + label (hash of a different text representation)
+19,18,1,1,0853dbd6d764c3e7,69679b7485ec3496,False,row order + label (hash of a different text representation)
+20,19,1,1,a9e61105dac88055,414679a8c924b917,False,row order + label (hash of a different text representation)
+21,20,1,1,b65eb00bf715aa93,7c8510efb4fe6527,False,row order + label (hash of a different text representation)
+22,21,1,1,3081280953ae09dc,a02ee5a4c7923d0a,False,row order + label (hash of a different text representation)
+23,22,1,1,4dc61b24cac44c12,4dc61b24cac44c12,True,hash
+24,23,1,1,07db569937c0d1a2,07db569937c0d1a2,True,hash
+25,24,1,1,db9172dcb9e5c419,db9172dcb9e5c419,True,hash
+26,25,0,0,c4d1ffe990b4f79b,78f3a5bead479be1,False,row order + label (hash of a different text representation)
+27,26,0,0,812e461c189b4fc6,c35e17f23a0f03b5,False,row order + label (hash of a different text representation)
+28,27,0,0,dc3ab79cd1e93298,2b99bda760749840,False,row order + label (hash of a different text representation)
+29,28,0,0,73bf3357575298ba,10df04aed4758834,False,row order + label (hash of a different text representation)
+30,29,0,0,418dd3424ffb4c66,6170d4fb53761ef3,False,row order + label (hash of a different text representation)
+31,30,0,0,8b187ca382917678,8b187ca382917678,True,hash
+32,31,0,0,80ec9e452c72b883,bf892e771bba7c3a,False,row order + label (hash of a different text representation)
+33,32,0,0,d1304fe259d4d0b8,1067f70b2f600d6a,False,row order + label (hash of a different text representation)
+34,33,0,0,c0fc00b73fcc8f97,afb17e89abb8fc61,False,row order + label (hash of a different text representation)
+35,34,0,0,3813fae772928cbd,b8962a71c66e4595,False,row order + label (hash of a different text representation)
+36,35,0,0,a2b2ca6fff623ad5,dfb0549ac54ee042,False,row order + label (hash of a different text representation)
+37,36,0,0,421a8c68bb6ebbad,ca70d6773b250097,False,row order + label (hash of a different text representation)
+38,37,0,0,796efe7bb07eb20c,912278613488f8dc,False,row order + label (hash of a different text representation)
+39,38,0,0,7404ae4968fbd1e1,5c33daaf367aad83,False,row order + label (hash of a different text representation)
+40,39,0,0,08bda17c814190c6,08bda17c814190c6,True,hash
+41,40,0,0,98eb1f2667793666,98eb1f2667793666,True,hash
+42,41,0,0,e410fd7b537d88c5,e410fd7b537d88c5,True,hash
+43,42,0,0,c3a73c3d8c65535c,c3a73c3d8c65535c,True,hash
+44,43,0,0,f423929a3201f6e6,f423929a3201f6e6,True,hash
+45,44,0,0,2aaf91139418092a,2aaf91139418092a,True,hash
+46,45,0,0,c9de2dc0914ed38d,c9de2dc0914ed38d,True,hash
+47,46,0,0,403fb38556b12947,658e91dfa6f65248,False,row order + label (hash of a different text representation)
+48,47,0,0,25a9a79dea5fe5fe,959d4d1a09f2559d,False,row order + label (hash of a different text representation)
+49,48,0,0,1e92489f9dfe37ee,5b527a3cfc27acb2,False,row order + label (hash of a different text representation)
+50,49,0,0,07708c3549780c7b,84535a019806df7c,False,row order + label (hash of a different text representation)
+51,50,0,0,47487681c29f6b58,850db4ba4d9073b3,False,row order + label (hash of a different text representation)
+52,51,0,0,b6febd491cd122f7,7a8ead8d3fec7116,False,row order + label (hash of a different text representation)
+53,52,0,0,c409422929832b81,8b656b64ebd943d7,False,row order + label (hash of a different text representation)
+54,53,0,0,0bc1dac946cd78ea,937ebbc5ad6947bf,False,row order + label (hash of a different text representation)
+55,54,0,0,bafa17d69dc9ae9b,d24b3a5f8abce3dc,False,row order + label (hash of a different text representation)
+56,55,0,0,da017aab8ff0fa25,3306e11bebc55551,False,row order + label (hash of a different text representation)
+57,56,0,0,d2ea9912ce0963e4,eb469da06ec81727,False,row order + label (hash of a different text representation)
+58,57,0,0,d29c24632c2b68b7,9f8d67252b84226b,False,row order + label (hash of a different text representation)
+59,58,0,0,ba300be2891c4316,3d9b54006b0d451f,False,row order + label (hash of a different text representation)
+60,59,0,0,9f12e5ea8c3b7d04,9f12e5ea8c3b7d04,True,hash
+61,60,0,0,800c9c5fd9db4db6,800c9c5fd9db4db6,True,hash
+62,61,0,0,436c0e77e72bf9d7,436c0e77e72bf9d7,True,hash
+63,62,0,0,d0399cf21cf07e71,d0399cf21cf07e71,True,hash
+64,63,0,0,7da3fc77c312f83a,7da3fc77c312f83a,True,hash
+65,64,0,0,883370ba8bdbbf0f,883370ba8bdbbf0f,True,hash
+66,65,0,0,f309beba240077b5,f309beba240077b5,True,hash
+67,66,0,0,212f49577419a7e4,4f677aab56643e90,False,row order + label (hash of a different text representation)
+68,67,0,0,6064a6c717e578ed,6064a6c717e578ed,True,hash
+69,68,0,0,8f8cd2d2ce41c13d,8f8cd2d2ce41c13d,True,hash
+70,69,0,0,e2a287516e1916af,4a6f0c96546a60ab,False,row order + label (hash of a different text representation)
+71,70,0,0,eebc6fe4a24c9de6,eebc6fe4a24c9de6,True,hash
+72,71,0,0,4eb82ecb3cbf5aea,4eb82ecb3cbf5aea,True,hash
+73,72,0,0,d97453ca24bc8dc8,d97453ca24bc8dc8,True,hash
+74,73,0,0,a76ca80e32d609ea,4385a0b46d506f1e,False,row order + label (hash of a different text representation)
+75,74,0,0,2482f5c67966cd82,70ed73fef7077ad0,False,row order + label (hash of a different text representation)
+76,75,0,0,ce024c2d015c43d5,c219067e27f704c5,False,row order + label (hash of a different text representation)
+77,76,0,0,6cd2e6ddf04e1abd,6cd2e6ddf04e1abd,True,hash
+78,77,0,0,312f39f151f4fcc5,e8e4a003a3a1ce6c,False,row order + label (hash of a different text representation)
+79,78,0,0,212f2a214a8101c6,212f2a214a8101c6,True,hash
+80,79,0,0,9a7ae18d19b2ccee,9a7ae18d19b2ccee,True,hash
+81,80,0,0,3835e35f9e50ee3b,b71fbf5da6052d99,False,row order + label (hash of a different text representation)
+82,81,0,0,ef39cb351778b729,ef39cb351778b729,True,hash
+83,82,0,0,45e1232d6784f340,45e1232d6784f340,True,hash
+84,83,0,0,530d17b2749dcb92,530d17b2749dcb92,True,hash
+85,84,0,0,40f0b1d9462ac348,40f0b1d9462ac348,True,hash
+86,85,0,0,c74b77f84bf804bf,c74b77f84bf804bf,True,hash
+87,86,0,0,53affd1a231fa775,53affd1a231fa775,True,hash
+88,87,0,0,dae4fbd6f61c5bf0,82618cca1d70d4a3,False,row order + label (hash of a different text representation)
+89,88,1,1,3e10cb9d2718cab3,4000933662f97735,False,row order + label (hash of a different text representation)
+90,89,1,1,55c919bcdaae5c10,29eaaebe6f86d0a9,False,row order + label (hash of a different text representation)
+91,90,1,1,e6a17cca647a6a9b,6a2022f206e9fc31,False,row order + label (hash of a different text representation)
+92,91,1,1,4a947c439aa11f9f,d5a531ba88f10317,False,row order + label (hash of a different text representation)
+93,92,1,1,ffaa8dd1823decc9,f2703fe114f438d7,False,row order + label (hash of a different text representation)
+94,93,1,1,a484188cdca54ac8,f81d0cbd00b9cc32,False,row order + label (hash of a different text representation)
