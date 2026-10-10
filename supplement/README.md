@@ -152,3 +152,29 @@ Decision threshold 0.5, labels by source. Channel from `data/ua_real_metadata.cs
 | SMS / messengers / other | XLM-R seed 44 | 52 (18) | 12 | 18 | 6 | 0.500 |
 
 Pairwise comparisons by channel, by XLM-R run and with alternative labels are sensitivity analyses with unadjusted p-values; they are not part of the Holm family of Table A1 (see `derived/ua_real_label_sensitivity.csv`, `results/hybrids_seeds_stats.csv`).
+
+## Table A4. Adversarial modifications on one XLM-R checkpoint (Таблиця А4. Змагальні модифікації на одній контрольній точці XLM-R)
+
+Notebook v6.2 (cell 17б): XLM-R (seed 42) was re-trained once and the SAME model scored both the modified positive-class emails and the modified legitimate emails, so each cell is one operating point of one detector: detected share / FPR. Decision agreement with the main XLM-R: EN 0.993, EXT 0.964, UA-MT 0.980, UA-NAZ 0.937, UA-REAL 0.936. The LLM scores are those of the main run.
+
+| Set | Model | Original | Homoglyphs | Invisible chars | Benign text prefix | Instruction injection |
+|---|---|---|---|---|---|---|
+| EN | XLM-R (одна контрольна точка) | 0.97 / 0.01 | 1.00 / 0.25 | 0.99 / 0.05 | 0.59 / 0.01 | 0.99 / 0.03 |
+| EN | Каскад XLM-R(T) → ВММ | 0.97 / 0.01 | 1.00 / 0.22 | 0.99 / 0.03 | 0.59 / 0.01 | 0.96 / 0.01 |
+| EN | Паралельний XLM-R ∨ ВММ | 0.97 / 0.03 | 1.00 / 0.30 | 0.99 / 0.07 | 0.80 / 0.01 | 0.99 / 0.03 |
+| EXT | XLM-R (одна контрольна точка) | 0.70 / 0.00 | 0.92 / 0.18 | 0.92 / 0.00 | 0.10 / 0.00 | 0.72 / 0.00 |
+| EXT | Каскад XLM-R(T) → ВММ | 0.76 / 0.00 | 0.92 / 0.15 | 0.92 / 0.00 | 0.12 / 0.00 | 0.56 / 0.00 |
+| EXT | Паралельний XLM-R ∨ ВММ | 0.88 / 0.12 | 0.92 / 0.21 | 0.92 / 0.09 | 0.84 / 0.06 | 0.72 / 0.00 |
+| UA-MT | XLM-R (одна контрольна точка) | 0.95 / 0.03 | 0.98 / 0.31 | 0.97 / 0.18 | 0.57 / 0.02 | 0.93 / 0.05 |
+| UA-MT | Каскад XLM-R(T) → ВММ | 0.94 / 0.05 | 0.98 / 0.27 | 0.98 / 0.15 | 0.58 / 0.01 | 0.93 / 0.03 |
+| UA-MT | Паралельний XLM-R ∨ ВММ | 0.97 / 0.18 | 1.00 / 0.44 | 0.99 / 0.30 | 0.85 / 0.10 | 0.94 / 0.05 |
+| UA-NAZ | XLM-R (одна контрольна точка) | 0.82 / 0.08 | 0.99 / 0.39 | 1.00 / 0.23 | 0.30 / 0.11 | 0.84 / 0.11 |
+| UA-NAZ | Каскад XLM-R(T) → ВММ | 0.93 / 0.09 | 0.99 / 0.40 | 0.99 / 0.23 | 0.36 / 0.11 | 0.75 / 0.07 |
+| UA-NAZ | Паралельний XLM-R ∨ ВММ | 0.97 / 0.32 | 0.99 / 0.60 | 1.00 / 0.49 | 0.85 / 0.24 | 0.87 / 0.12 |
+| UA-REAL | XLM-R (одна контрольна точка) | 0.35 / 0.27 | 0.90 / 0.54 | 0.77 / 0.40 | 0.35 / 0.13 | 0.42 / 0.17 |
+| UA-REAL | Каскад XLM-R(T) → ВММ | 0.55 / 0.17 | 0.97 / 0.48 | 0.84 / 0.33 | 0.45 / 0.11 | 0.26 / 0.14 |
+| UA-REAL | Паралельний XLM-R ∨ ВММ | 0.81 / 0.29 | 1.00 / 0.60 | 0.94 / 0.43 | 0.71 / 0.22 | 0.52 / 0.17 |
+
+## URL loss in translation
+
+Within the first 1200 characters that the models received, URLs survived translation in 59 of 63 UA-MT emails and 15 of 16 UA-NAZ emails; excluding the emails with lost URLs changes F1 of any model by at most 0.006 (`results/url_loss_analysis.csv`, `derived/url_loss_ua_naz.csv`). The 77% in `run_info.json` (`ua_mt_url_kept`) counts URLs anywhere in the full source text, including the part beyond 1200 characters that was never translated or shown to any model.

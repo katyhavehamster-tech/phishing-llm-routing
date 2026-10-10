@@ -147,4 +147,14 @@ pd.DataFrame(ch).to_csv(SUP / "table_A3_ua_real_by_channel.csv", index=False, en
 e = pd.DataFrame(ch); e = e[e.model.isin([LLM, X])]
 report.append("by channel: " + "; ".join(f"{r.channel} {r.model}: n={r.n}, TP={r.TP}, FP={r.FP}, F1={r.F1:.3f}" for r in e.itertuples()))
 
+# 6. Table A4: adversarial modifications on ONE XLM-R checkpoint (notebook v6.2, cell 17b)
+op = R / "robustness_one_checkpoint.csv"
+if op.exists():
+    oc = rd(op); oc["set"] = oc["Набір"].map(SHORT).map(SHORT_ART)
+    oc.drop(columns=["Набір"]).to_csv(SUP / "table_A4_one_checkpoint.csv", index=False, encoding="utf-8-sig")
+    x = oc[oc["Модель"].str.startswith("XLM-R")]
+    d = x.pivot_table(index="set", columns="Модифікація", values="FPR")
+    inc = max((d[k] - d["Оригінал"]).max() for k in ["Ін'єкція інструкції", "Легітимний текст"])
+    report.append(f"one checkpoint: max FPR increase of XLM-R under injection / benign text = {inc:.3f}")
+
 print("\n".join(report))
