@@ -1,4 +1,4 @@
-# Phishing / unwanted email detection with language models: routing experiment (v6)
+# Phishing / unwanted email detection with language models: routing experiment (v6.1)
 
 Reproducibility package for the article «Архітектурні підходи до застосування мовних моделей для виявлення фішингових
 і небажаних електронних листів» (Luchyk V. Ye., Nosov V. V., Vitvitska K. E.).
@@ -20,7 +20,24 @@ Reproducibility package for the article «Архітектурні підход�
 - `data/ua_real_metadata.csv` – the 94 real Ukrainian messages (UA-REAL): id, hash of the first 1200 characters, label,
   channel, kind, source, URL of the original publication, date; `data/ua_real_annotations.csv` – independent blind labels of two annotators (class, channel, language, purpose, editorial traces, confidence). **Message texts are not redistributed**; they can be
   retrieved from the cited public sources.
-- `derived/group_bootstrap_sensitivity.csv` – group (cluster) bootstrap of ΔF1 by near-duplicate groups (EN, UA-MT).
+- `derived/group_bootstrap_sensitivity.csv` – group (cluster) bootstrap of ΔF1 by near-duplicate groups (EN, UA-MT); other `derived/` files are written by `scripts/rebuild_tables.py`.
+- `supplement/` – supplementary tables A1–A3 of the article (pairwise comparisons, adversarial modifications in two blocks, UA-REAL by channel).
+
+## Stages of the experiment
+| Stage | What | Files |
+|---|---|---|
+| Base run (notebook v4/v5, state cached in `phishing_experiment_results_v4`) | data preparation, near-duplicate split, all models, hybrids for XLM-R seed 42, robustness, calibration, statistics | `results_main.csv`, `predictions.csv`, `stats_diff.csv`, `robustness.csv`, `calibration.csv`, `xlmr_seeds.csv`, `cascade_curve.csv`, `time.csv`; `run_info.json` (field `version` = `v5`) |
+| v6 analyses (notebook v6, separate state `state_v6.pkl`; base results reused, not recomputed) | hybrids for all three XLM-R runs, FPR ≤ 1% threshold chosen on validation, defended system prompt, FPR on modified legitimate emails (XLM-R re-trained with seed 42 because the base weights were not saved) | `hybrids_seeds*.csv`, `op_point_val.csv`, `robustness_defense.csv`, `robustness_fpr.csv`, `val_predictions.csv` |
+| Post-hoc (CPU, from saved predictions) | group bootstrap, Holm family of 25, label agreement and sensitivity, supplement tables | `derived/`, `supplement/` (`scripts/rebuild_tables.py`) |
+| v6.1 (this version of the notebook) | pinned library versions and model revisions, configuration hash in the cache check, optional saving of XLM-R weights; no change to the article's results | `phishing_llm_experiment_v6.ipynb`, `requirements.txt` |
+
+Model revisions were recorded by querying the Hugging Face Hub during the v6 run; they are now passed as `revision=` to every `from_pretrained` call. The base run used the revisions current at that time, which were not recorded separately. The dataset revision of `zefang-liu/phishing-email-dataset` was not recorded; `data/split_manifest.csv` (hashes of all 17,479 emails) is the check that the same data are used.
+
+## Rebuilding the tables
+`pip install pandas numpy scipy openpyxl && python scripts/rebuild_tables.py` recomputes, from the saved predictions only: confusion matrices and F1 of all models on all sets (checked against `results_main.csv`), the Holm family of 25 pairwise comparisons, UA-REAL label agreement and label sensitivity, UA-REAL by channel and the supplementary tables A1–A3 (`supplement/README.md`).
+
+## UA-REAL
+See `data/UA_REAL_PROTOCOL.md` (inclusion and extraction rules, labels, identifiers) and `data/ua_real_id_map.csv` (explicit link between `sample_id`, the rows of `predictions.csv` and full SHA-256 hashes of the raw text and of the model input; verified for 94/94 messages against the original file).
 
 ## Environment
 {
