@@ -1,0 +1,7 @@
+# Versions with which the CPU scripts in scripts/ were checked (Python 3.13.16).
+# They recompute tables from the saved predictions; no GPU or model download is needed.
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+scikit-learn==1.9.1
+openpyxl==3.1.5

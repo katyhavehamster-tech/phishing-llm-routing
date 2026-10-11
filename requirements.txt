@@ -1,4 +1,6 @@
-# Versions of the run used in the article (results/run_info.json). GPU run: Google Colab, NVIDIA T4, Python 3.13.15.
+# Versions of the GPU runs used in the article (results/run_info*.json): Google Colab (base run, torch +cu130)
+# and Kaggle (v6.3, torch +cu128), NVIDIA T4, Python 3.13.15. Unpinned packages below were not recorded during the runs.
+# For the CPU scripts in scripts/ see requirements-cpu.txt.
 torch==2.11.0          # Colab build 2.11.0+cu130
 transformers==5.18.0
 bitsandbytes==0.50.2
