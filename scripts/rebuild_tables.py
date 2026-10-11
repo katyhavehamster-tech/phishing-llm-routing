@@ -3,7 +3,8 @@
 Usage:  python scripts/rebuild_tables.py
 Writes derived/*.csv and supplement/*.csv and prints a consistency report.
 All numbers are recomputed from results/predictions.csv, results/stats_diff.csv,
-results/robustness*.csv and data/ua_real_*.csv; nothing is re-trained.
+results/robustness*.csv, results/llm_extra_*.csv, results/injection_adaptive.csv
+and data/ua_real_*.csv; nothing is re-trained.
 """
 from pathlib import Path
 import numpy as np
@@ -156,5 +157,34 @@ if op.exists():
     d = x.pivot_table(index="set", columns="Модифікація", values="FPR")
     inc = max((d[k] - d["Оригінал"]).max() for k in ["Ін'єкція інструкції", "Легітимний текст"])
     report.append(f"one checkpoint: max FPR increase of XLM-R under injection / benign text = {inc:.3f}")
+
+# 7. Tables A5-A6 (notebook v6.3, cell 17в): additional generative models and adaptive instruction injection
+em, es, ia, pe = R / "llm_extra_main.csv", R / "llm_extra_stats.csv", R / "injection_adaptive.csv", R / "predictions_extra_llms.csv"
+if em.exists() and pe.exists():
+    m5 = rd(em); m5["set"] = m5["Набір"].map(SHORT).map(SHORT_ART)
+    # recompute the metrics of the extra LLMs from the saved per-email probabilities
+    px = rd(pe); bad = 0
+    for mdl in [c for c in px.columns if c not in ("набір", "i", "мітка", "sha256_16")]:
+        for s_, g in px.groupby("набір"):
+            tp, fp, fn, tn, f1 = conf(g["мітка"].values, g[mdl].values)
+            row = m5[(m5["Модель"] == mdl) & (m5["Набір"] == SETS[s_])].iloc[0]
+            bad += int((tp, fp, fn, tn) != (row.TP, row.FP, row.FN, row.TN))
+    # Qwen rows of A5 must equal the main results
+    rm = rd(R / "results_main.csv"); q = m5[m5["Модель"] == "Qwen2.5-7B (промпт)"].merge(rm, on=["Модель", "Набір"], suffixes=("", "_main"))
+    bad += int((q["F1"] - q["F1_main"]).abs().max() > 1e-9)
+    report.append(f"A5: confusion matrices of extra LLMs recomputed from predictions_extra_llms.csv, mismatches = {bad}")
+    a5 = m5[["set", "Модель", "n", "TP", "FP", "TN", "FN", "Precision", "Recall", "F1", "FPR", "ROC_AUC", "PR_AUC", "ECE"]]
+    a5.to_csv(SUP / "table_A5_extra_llms.csv", index=False, encoding="utf-8-sig")
+    if es.exists():
+        s5 = rd(es); s5["set"] = s5["Набір"].map(SHORT).map(SHORT_ART)
+        s5.drop(columns=["Набір"]).to_csv(SUP / "table_A5b_extra_llms_stats.csv", index=False, encoding="utf-8-sig")
+if ia.exists():
+    a6 = rd(ia); a6["set"] = a6["Набір"].map(SHORT).map(SHORT_ART)
+    a6 = a6.pivot_table(index=["set", "Модель", "Промпт ВММ"], columns="Варіант", values="Частка виявлених").reset_index()
+    a6.to_csv(SUP / "table_A6_adaptive_injection.csv", index=False, encoding="utf-8-sig")
+    ad = "Адаптивна (найкращий для атакувальника з V1–V5)"
+    t = a6[a6["Промпт ВММ"] == "без захисту"].set_index(["Модель", "set"])[ad]
+    report.append("A6 adaptive (no defence): " + "; ".join(f"{k[0]} {k[1]}={v:.2f}" for k, v in t.items()
+                                                          if k[0] in ("Qwen2.5-7B (промпт)", "Llama-3.1-8B (промпт)", "Mistral-7B-v0.3 (промпт)")))
 
 print("\n".join(report))

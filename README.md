@@ -1,4 +1,4 @@
-# Phishing / unwanted email detection with language models: routing experiment (v6.1)
+# Phishing / unwanted email detection with language models: routing experiment (v6.3)
 
 Reproducibility package for the article «Архітектурні підходи до застосування мовних моделей для виявлення фішингових
 і небажаних електронних листів» (Luchyk V. Ye., Nosov V. V., Vitvitska K. E.).
@@ -30,6 +30,7 @@ Reproducibility package for the article «Архітектурні підход�
 | v6 analyses (notebook v6, separate state `state_v6.pkl`; base results reused, not recomputed) | hybrids for all three XLM-R runs, FPR ≤ 1% threshold chosen on validation, defended system prompt, FPR on modified legitimate emails (XLM-R re-trained with seed 42 because the base weights were not saved) | `hybrids_seeds*.csv`, `op_point_val.csv`, `robustness_defense.csv`, `robustness_fpr.csv`, `val_predictions.csv` |
 | Post-hoc (CPU, from saved predictions) | group bootstrap, Holm family of 25, label agreement and sensitivity, supplement tables | `derived/`, `supplement/` (`scripts/rebuild_tables.py`) |
 | v6.2 (cell 17б) | XLM-R seed 42 re-trained once and used for BOTH detection on modified positives and FPR on modified legitimate emails (one checkpoint); URL-loss analysis for UA-MT and UA-NAZ | `robustness_one_checkpoint.csv`, `url_loss_analysis.csv`, `run_info_v62.json` (run of 10.10.2026; base results reproduced byte for byte) |
+| v6.3 (cell 17в) | Two more generative models with the same prompt, quantisation and threshold (Llama-3.1-8B-Instruct, Mistral-7B-Instruct-v0.3) and adaptive instruction injection (five variants, attacker picks the best per email; with and without a defended system prompt) | `llm_extra_main.csv`, `llm_extra_stats.csv`, `injection_adaptive.csv`, `predictions_extra_llms.csv`, `run_info_v63.json` (Kaggle Tesla T4, 11.10.2026; base results reproduced byte for byte); supplement Tables A5-A6 |
 | v6.1 | pinned library versions and model revisions, configuration hash in the cache check, optional saving of XLM-R weights; no change to the article's results | `phishing_llm_experiment_v6.ipynb`, `requirements.txt` |
 
 Model revisions were recorded by querying the Hugging Face Hub during the v6 run; they are now passed as `revision=` to every `from_pretrained` call. The base run used the revisions current at that time, which were not recorded separately. The dataset revision of `zefang-liu/phishing-email-dataset` was not recorded; `data/split_manifest.csv` (hashes of all 17,479 emails) is the check that the same data are used.
@@ -73,6 +74,9 @@ Email:
 """
 {email}
 """
+
+## Third-party models
+Qwen2.5-7B-Instruct (Apache 2.0), Mistral-7B-Instruct-v0.3 (Apache 2.0), Llama-3.1-8B-Instruct (Llama 3.1 Community License; weights loaded from the public copy `unsloth/Llama-3.1-8B-Instruct`, revision recorded in `results/run_info_v63.json`), XLM-RoBERTa base (MIT), OPUS-MT en-uk (CC BY 4.0). The notebook downloads the weights; none are redistributed here.
 
 ## Licence
 Code: MIT. Results and metadata: CC BY 4.0. Third-party datasets keep their original licences.

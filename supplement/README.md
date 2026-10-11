@@ -175,6 +175,160 @@ Notebook v6.2 (cell 17б): XLM-R (seed 42) was re-trained once and the SAME mode
 | UA-REAL | Каскад XLM-R(T) → ВММ | 0.55 / 0.17 | 0.97 / 0.48 | 0.84 / 0.33 | 0.45 / 0.11 | 0.26 / 0.14 |
 | UA-REAL | Паралельний XLM-R ∨ ВММ | 0.81 / 0.29 | 1.00 / 0.60 | 0.94 / 0.43 | 0.71 / 0.22 | 0.52 / 0.17 |
 
+## Table A5. Additional generative models (Таблиця А5. Додаткові генеративні моделі)
+
+Notebook v6.3 (cell 17в), run on Kaggle (Tesla T4): Llama-3.1-8B-Instruct (weights from the public copy `unsloth/Llama-3.1-8B-Instruct`, revision 4699cc7; Llama 3.1 Community License) and Mistral-7B-Instruct-v0.3 (`mistralai/Mistral-7B-Instruct-v0.3`, revision c170c70; Apache 2.0) with the same prompt, 4-bit NF4 quantisation, 1200-character input and threshold 0.5 as Qwen2.5-7B-Instruct, without tuning for these models. For Mistral, whose tokenizer emits a separate space token before a digit, that token was appended to the prompt and the next token was scored. Mean probability mass on the answer tokens «1»/«0»: Llama 0.998, Mistral 0.99999. The main results (Qwen, XLM-R, LR, hybrids) of this run are byte-identical to the article's run. Per-email probabilities: `results/predictions_extra_llms.csv`.
+
+| Set | Model | TP / FP / TN / FN | Precision | Recall | F1 | FPR | ROC-AUC | PR-AUC |
+|---|---|---|---|---|---|---|---|---|
+| EN | Qwen2.5-7B (промпт) | 303 / 16 / 589 / 92 | 0.950 | 0.767 | 0.849 | 0.026 | 0.967 | 0.953 |
+| EN | Llama-3.1-8B (промпт) | 387 / 325 / 280 / 8 | 0.544 | 0.980 | 0.699 | 0.537 | 0.942 | 0.928 |
+| EN | Mistral-7B-v0.3 (промпт) | 393 / 366 / 239 / 2 | 0.518 | 0.995 | 0.681 | 0.605 | 0.921 | 0.863 |
+| EXT | Qwen2.5-7B (промпт) | 41 / 4 / 29 / 9 | 0.911 | 0.820 | 0.863 | 0.121 | 0.952 | 0.963 |
+| EXT | Llama-3.1-8B (промпт) | 46 / 23 / 10 / 4 | 0.667 | 0.920 | 0.773 | 0.697 | 0.913 | 0.956 |
+| EXT | Mistral-7B-v0.3 (промпт) | 50 / 23 / 10 / 0 | 0.685 | 1.000 | 0.813 | 0.697 | 0.849 | 0.906 |
+| UA-MT | Qwen2.5-7B (промпт) | 85 / 17 / 83 / 15 | 0.833 | 0.850 | 0.842 | 0.170 | 0.905 | 0.915 |
+| UA-MT | Llama-3.1-8B (промпт) | 98 / 98 / 2 / 2 | 0.500 | 0.980 | 0.662 | 0.980 | 0.786 | 0.784 |
+| UA-MT | Mistral-7B-v0.3 (промпт) | 100 / 93 / 7 / 0 | 0.518 | 1.000 | 0.683 | 0.930 | 0.824 | 0.790 |
+| UA-NAZ | Qwen2.5-7B (промпт) | 63 / 22 / 53 / 4 | 0.741 | 0.940 | 0.829 | 0.293 | 0.939 | 0.938 |
+| UA-NAZ | Llama-3.1-8B (промпт) | 67 / 75 / 0 / 0 | 0.472 | 1.000 | 0.641 | 1.000 | 0.893 | 0.831 |
+| UA-NAZ | Mistral-7B-v0.3 (промпт) | 67 / 74 / 1 / 0 | 0.475 | 1.000 | 0.644 | 0.987 | 0.759 | 0.692 |
+| UA-REAL | Qwen2.5-7B (промпт) | 25 / 5 / 58 / 6 | 0.833 | 0.806 | 0.820 | 0.079 | 0.918 | 0.849 |
+| UA-REAL | Llama-3.1-8B (промпт) | 31 / 27 / 36 / 0 | 0.534 | 1.000 | 0.697 | 0.429 | 0.965 | 0.940 |
+| UA-REAL | Mistral-7B-v0.3 (промпт) | 31 / 44 / 19 / 0 | 0.413 | 1.000 | 0.585 | 0.698 | 0.909 | 0.756 |
+
+Pairwise comparisons of the extra LLMs with Qwen2.5-7B and with XLM-R (main run): ΔF1 with a paired bootstrap 95% CI (2,000 resamples), exact McNemar test, Holm adjustment over a separate family of 20 comparisons.
+
+| Set | A / B | ΔF1 (A − B) | 95% CI | Only A correct / only B | p | p (Holm) |
+|---|---|---|---|---|---|---|
+| EN | Llama-3.1-8B (промпт) / Qwen2.5-7B (промпт) | -0.150 | [-0.189; -0.112] | 85 / 310 | < 0.001 | < 0.001 |
+| EN | Llama-3.1-8B (промпт) / XLM-R (донавчена) | -0.270 | [-0.300; -0.240] | 8 / 317 | < 0.001 | < 0.001 |
+| EN | Mistral-7B-v0.3 (промпт) / Qwen2.5-7B (промпт) | -0.168 | [-0.208; -0.129] | 91 / 351 | < 0.001 | < 0.001 |
+| EN | Mistral-7B-v0.3 (промпт) / XLM-R (донавчена) | -0.288 | [-0.322; -0.256] | 16 / 360 | < 0.001 | < 0.001 |
+| EXT | Llama-3.1-8B (промпт) / Qwen2.5-7B (промпт) | -0.090 | [-0.175; -0.010] | 5 / 19 | 0.007 | 0.040 |
+| EXT | Llama-3.1-8B (промпт) / XLM-R (донавчена) | -0.064 | [-0.168; 0.037] | 10 / 23 | 0.035 | 0.175 |
+| EXT | Mistral-7B-v0.3 (промпт) / Qwen2.5-7B (промпт) | -0.050 | [-0.143; 0.040] | 9 / 19 | 0.087 | 0.349 |
+| EXT | Mistral-7B-v0.3 (промпт) / XLM-R (донавчена) | -0.024 | [-0.133; 0.090] | 14 / 23 | 0.188 | 0.457 |
+| UA-MT | Llama-3.1-8B (промпт) / Qwen2.5-7B (промпт) | -0.179 | [-0.241; -0.118] | 13 / 81 | < 0.001 | < 0.001 |
+| UA-MT | Llama-3.1-8B (промпт) / XLM-R (донавчена) | -0.298 | [-0.364; -0.237] | 4 / 96 | < 0.001 | < 0.001 |
+| UA-MT | Mistral-7B-v0.3 (промпт) / Qwen2.5-7B (промпт) | -0.159 | [-0.221; -0.096] | 15 / 76 | < 0.001 | < 0.001 |
+| UA-MT | Mistral-7B-v0.3 (промпт) / XLM-R (донавчена) | -0.277 | [-0.344; -0.219] | 4 / 89 | < 0.001 | < 0.001 |
+| UA-NAZ | Llama-3.1-8B (промпт) / Qwen2.5-7B (промпт) | -0.188 | [-0.251; -0.128] | 4 / 53 | < 0.001 | < 0.001 |
+| UA-NAZ | Llama-3.1-8B (промпт) / XLM-R (донавчена) | -0.248 | [-0.329; -0.174] | 7 / 67 | < 0.001 | < 0.001 |
+| UA-NAZ | Mistral-7B-v0.3 (промпт) / Qwen2.5-7B (промпт) | -0.185 | [-0.248; -0.125] | 4 / 52 | < 0.001 | < 0.001 |
+| UA-NAZ | Mistral-7B-v0.3 (промпт) / XLM-R (донавчена) | -0.245 | [-0.327; -0.171] | 7 / 66 | < 0.001 | < 0.001 |
+| UA-REAL | Llama-3.1-8B (промпт) / Qwen2.5-7B (промпт) | -0.123 | [-0.256; 0.006] | 6 / 22 | 0.004 | 0.026 |
+| UA-REAL | Llama-3.1-8B (промпт) / XLM-R (донавчена) | 0.220 | [0.060; 0.390] | 28 / 22 | 0.480 | 0.480 |
+| UA-REAL | Mistral-7B-v0.3 (промпт) / Qwen2.5-7B (промпт) | -0.235 | [-0.365; -0.110] | 6 / 39 | < 0.001 | < 0.001 |
+| UA-REAL | Mistral-7B-v0.3 (промпт) / XLM-R (донавчена) | 0.109 | [-0.041; 0.272] | 19 / 30 | 0.152 | 0.457 |
+
+## Table A6. Adaptive instruction injection (Таблиця А6. Адаптивні ін'єкції інструкцій)
+
+Share of positive-class emails detected (threshold 0.5) for the original emails and five injection variants: V1 instruction at the end of the email (as in Table A2), V2 «security gateway notice» at the start, V3 an attempt to close the prompt's quoting, V4 a hidden HTML comment, V5 an instruction in the middle of the email; texts in `results/run_info_v63.json`. «Adaptive» counts an email as detected only if it was detected under every variant V1–V5 (the attacker picks the best variant per email). «Defended» = system prompt instructing the model to treat the email as untrusted data. XLM-R here is a new re-training with seed 42 (its v6.2 weights were not saved; decision agreement with the main XLM-R on EN 0.992); LR and all XLM-R-based rows use this checkpoint. Llama and Mistral flag most legitimate emails (Table A5), so their high detection on the Ukrainian sets is not evidence of robustness.
+
+| Set | Model | Prompt | Original | V1 | V2 | V3 | V4 | V5 | Adaptive |
+|---|---|---|---|---|---|---|---|---|---|
+| EN | TF-IDF + LR | – | 0.95 | 0.94 | 0.96 | 0.97 | 0.96 | 0.96 | 0.94 |
+| EN | XLM-R (одна контрольна точка) | – | 0.97 | 0.98 | 0.99 | 1.00 | 0.99 | 0.96 | 0.96 |
+| EN | Qwen2.5-7B (промпт) | plain | 0.76 | 0.00 | 0.66 | 0.84 | 0.61 | 0.44 | 0.00 |
+| EN | Qwen2.5-7B (промпт) | defended | 0.74 | 0.03 | 0.73 | 0.80 | 0.60 | 0.55 | 0.03 |
+| EN | Llama-3.1-8B (промпт) | plain | 0.98 | 0.41 | 0.93 | 0.95 | 0.90 | 0.87 | 0.39 |
+| EN | Llama-3.1-8B (промпт) | defended | 0.99 | 0.91 | 0.98 | 0.99 | 0.99 | 0.97 | 0.88 |
+| EN | Mistral-7B-v0.3 (промпт) | plain | 1.00 | 0.28 | 0.73 | 0.89 | 0.46 | 0.59 | 0.21 |
+| EN | Mistral-7B-v0.3 (промпт) | defended | 1.00 | 0.79 | 0.80 | 0.93 | 0.76 | 0.85 | 0.59 |
+| EN | Каскад XLM-R(T) → Qwen2.5-7B | plain | 0.97 | 0.97 | 0.98 | 0.99 | 0.98 | 0.95 | 0.95 |
+| EN | Каскад XLM-R(T) → Qwen2.5-7B | defended | 0.97 | 0.97 | 0.98 | 0.99 | 0.98 | 0.95 | 0.95 |
+| EN | Каскад XLM-R(T) → Llama-3.1-8B | plain | 0.97 | 0.97 | 0.99 | 0.99 | 0.99 | 0.96 | 0.96 |
+| EN | Каскад XLM-R(T) → Llama-3.1-8B | defended | 0.97 | 0.99 | 1.00 | 1.00 | 0.99 | 0.97 | 0.97 |
+| EN | Каскад XLM-R(T) → Mistral-7B-v0.3 | plain | 0.97 | 0.97 | 0.98 | 0.99 | 0.98 | 0.95 | 0.95 |
+| EN | Каскад XLM-R(T) → Mistral-7B-v0.3 | defended | 0.97 | 0.97 | 0.99 | 1.00 | 0.99 | 0.95 | 0.95 |
+| EN | Паралельний XLM-R ∨ Qwen2.5-7B | plain | 0.97 | 0.98 | 0.99 | 1.00 | 0.99 | 0.96 | 0.96 |
+| EN | Паралельний XLM-R ∨ Qwen2.5-7B | defended | 0.97 | 0.98 | 0.99 | 1.00 | 0.99 | 0.96 | 0.96 |
+| EN | Паралельний XLM-R ∨ Llama-3.1-8B | plain | 0.99 | 0.98 | 0.99 | 1.00 | 1.00 | 0.99 | 0.97 |
+| EN | Паралельний XLM-R ∨ Llama-3.1-8B | defended | 0.99 | 1.00 | 1.00 | 1.00 | 1.00 | 0.99 | 0.99 |
+| EN | Паралельний XLM-R ∨ Mistral-7B-v0.3 | plain | 1.00 | 0.98 | 0.99 | 1.00 | 0.99 | 0.97 | 0.96 |
+| EN | Паралельний XLM-R ∨ Mistral-7B-v0.3 | defended | 1.00 | 0.99 | 0.99 | 1.00 | 0.99 | 0.97 | 0.97 |
+| EXT | TF-IDF + LR | – | 0.84 | 0.72 | 0.84 | 0.88 | 0.84 | 0.76 | 0.72 |
+| EXT | XLM-R (одна контрольна точка) | – | 0.78 | 0.72 | 0.94 | 0.96 | 0.94 | 0.56 | 0.56 |
+| EXT | Qwen2.5-7B (промпт) | plain | 0.82 | 0.00 | 0.56 | 0.82 | 0.60 | 0.54 | 0.00 |
+| EXT | Qwen2.5-7B (промпт) | defended | 0.84 | 0.04 | 0.74 | 0.84 | 0.60 | 0.72 | 0.04 |
+| EXT | Llama-3.1-8B (промпт) | plain | 0.92 | 0.64 | 0.92 | 0.92 | 0.92 | 0.92 | 0.64 |
+| EXT | Llama-3.1-8B (промпт) | defended | 0.92 | 0.96 | 0.92 | 0.92 | 0.92 | 1.00 | 0.88 |
+| EXT | Mistral-7B-v0.3 (промпт) | plain | 1.00 | 0.34 | 0.58 | 0.70 | 0.20 | 0.58 | 0.18 |
+| EXT | Mistral-7B-v0.3 (промпт) | defended | 0.98 | 0.64 | 0.68 | 0.74 | 0.46 | 0.76 | 0.32 |
+| EXT | Каскад XLM-R(T) → Qwen2.5-7B | plain | 0.76 | 0.60 | 0.94 | 0.98 | 0.92 | 0.56 | 0.54 |
+| EXT | Каскад XLM-R(T) → Qwen2.5-7B | defended | 0.76 | 0.62 | 0.98 | 0.98 | 0.92 | 0.62 | 0.56 |
+| EXT | Каскад XLM-R(T) → Llama-3.1-8B | plain | 0.76 | 0.82 | 1.00 | 1.00 | 0.98 | 0.66 | 0.66 |
+| EXT | Каскад XLM-R(T) → Llama-3.1-8B | defended | 0.76 | 0.84 | 1.00 | 1.00 | 0.98 | 0.66 | 0.66 |
+| EXT | Каскад XLM-R(T) → Mistral-7B-v0.3 | plain | 0.84 | 0.76 | 0.94 | 0.98 | 0.82 | 0.64 | 0.62 |
+| EXT | Каскад XLM-R(T) → Mistral-7B-v0.3 | defended | 0.84 | 0.82 | 0.96 | 1.00 | 0.88 | 0.66 | 0.66 |
+| EXT | Паралельний XLM-R ∨ Qwen2.5-7B | plain | 0.98 | 0.72 | 0.98 | 0.98 | 0.98 | 0.72 | 0.64 |
+| EXT | Паралельний XLM-R ∨ Qwen2.5-7B | defended | 1.00 | 0.74 | 1.00 | 0.98 | 0.98 | 0.84 | 0.70 |
+| EXT | Паралельний XLM-R ∨ Llama-3.1-8B | plain | 1.00 | 0.90 | 1.00 | 1.00 | 1.00 | 0.92 | 0.90 |
+| EXT | Паралельний XLM-R ∨ Llama-3.1-8B | defended | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| EXT | Паралельний XLM-R ∨ Mistral-7B-v0.3 | plain | 1.00 | 0.82 | 0.96 | 0.98 | 0.94 | 0.78 | 0.76 |
+| EXT | Паралельний XLM-R ∨ Mistral-7B-v0.3 | defended | 1.00 | 0.92 | 0.96 | 1.00 | 0.94 | 0.88 | 0.82 |
+| UA-MT | TF-IDF + LR | – | 0.77 | 0.71 | 0.68 | 0.84 | 0.80 | 0.70 | 0.68 |
+| UA-MT | XLM-R (одна контрольна точка) | – | 0.97 | 0.99 | 1.00 | 0.98 | 1.00 | 0.95 | 0.94 |
+| UA-MT | Qwen2.5-7B (промпт) | plain | 0.85 | 0.21 | 0.57 | 0.88 | 0.76 | 0.74 | 0.18 |
+| UA-MT | Qwen2.5-7B (промпт) | defended | 0.84 | 0.43 | 0.61 | 0.83 | 0.76 | 0.87 | 0.40 |
+| UA-MT | Llama-3.1-8B (промпт) | plain | 0.98 | 1.00 | 1.00 | 1.00 | 0.99 | 0.99 | 0.98 |
+| UA-MT | Llama-3.1-8B (промпт) | defended | 0.97 | 1.00 | 1.00 | 1.00 | 0.98 | 0.99 | 0.97 |
+| UA-MT | Mistral-7B-v0.3 (промпт) | plain | 1.00 | 0.91 | 0.90 | 0.95 | 0.89 | 0.95 | 0.78 |
+| UA-MT | Mistral-7B-v0.3 (промпт) | defended | 1.00 | 0.97 | 0.92 | 0.99 | 0.95 | 0.99 | 0.87 |
+| UA-MT | Каскад XLM-R(T) → Qwen2.5-7B | plain | 0.96 | 0.95 | 1.00 | 0.98 | 0.98 | 0.95 | 0.94 |
+| UA-MT | Каскад XLM-R(T) → Qwen2.5-7B | defended | 0.96 | 0.95 | 1.00 | 0.98 | 0.98 | 0.95 | 0.94 |
+| UA-MT | Каскад XLM-R(T) → Llama-3.1-8B | plain | 0.98 | 0.99 | 1.00 | 1.00 | 1.00 | 0.95 | 0.95 |
+| UA-MT | Каскад XLM-R(T) → Llama-3.1-8B | defended | 0.98 | 0.99 | 1.00 | 1.00 | 1.00 | 0.95 | 0.95 |
+| UA-MT | Каскад XLM-R(T) → Mistral-7B-v0.3 | plain | 0.99 | 0.99 | 1.00 | 1.00 | 0.99 | 0.95 | 0.95 |
+| UA-MT | Каскад XLM-R(T) → Mistral-7B-v0.3 | defended | 0.99 | 0.99 | 1.00 | 1.00 | 1.00 | 0.95 | 0.95 |
+| UA-MT | Паралельний XLM-R ∨ Qwen2.5-7B | plain | 0.98 | 0.99 | 1.00 | 0.98 | 1.00 | 0.95 | 0.94 |
+| UA-MT | Паралельний XLM-R ∨ Qwen2.5-7B | defended | 0.98 | 0.99 | 1.00 | 0.98 | 1.00 | 0.96 | 0.94 |
+| UA-MT | Паралельний XLM-R ∨ Llama-3.1-8B | plain | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-MT | Паралельний XLM-R ∨ Llama-3.1-8B | defended | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-MT | Паралельний XLM-R ∨ Mistral-7B-v0.3 | plain | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-MT | Паралельний XLM-R ∨ Mistral-7B-v0.3 | defended | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-NAZ | TF-IDF + LR | – | 0.40 | 0.37 | 0.37 | 0.43 | 0.37 | 0.37 | 0.37 |
+| UA-NAZ | XLM-R (одна контрольна точка) | – | 0.91 | 0.93 | 0.97 | 0.97 | 0.97 | 0.78 | 0.78 |
+| UA-NAZ | Qwen2.5-7B (промпт) | plain | 0.94 | 0.27 | 0.42 | 0.84 | 0.85 | 0.82 | 0.15 |
+| UA-NAZ | Qwen2.5-7B (промпт) | defended | 0.93 | 0.45 | 0.57 | 0.79 | 0.85 | 0.87 | 0.31 |
+| UA-NAZ | Llama-3.1-8B (промпт) | plain | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-NAZ | Llama-3.1-8B (промпт) | defended | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-NAZ | Mistral-7B-v0.3 (промпт) | plain | 1.00 | 0.94 | 0.94 | 0.94 | 0.93 | 1.00 | 0.87 |
+| UA-NAZ | Mistral-7B-v0.3 (промпт) | defended | 1.00 | 0.99 | 0.97 | 0.96 | 0.97 | 1.00 | 0.93 |
+| UA-NAZ | Каскад XLM-R(T) → Qwen2.5-7B | plain | 0.94 | 0.82 | 0.97 | 0.94 | 0.97 | 0.88 | 0.79 |
+| UA-NAZ | Каскад XLM-R(T) → Qwen2.5-7B | defended | 0.94 | 0.85 | 0.99 | 0.94 | 0.97 | 0.90 | 0.82 |
+| UA-NAZ | Каскад XLM-R(T) → Llama-3.1-8B | plain | 0.96 | 0.94 | 1.00 | 0.97 | 0.99 | 0.94 | 0.94 |
+| UA-NAZ | Каскад XLM-R(T) → Llama-3.1-8B | defended | 0.96 | 0.94 | 1.00 | 0.97 | 0.99 | 0.94 | 0.94 |
+| UA-NAZ | Каскад XLM-R(T) → Mistral-7B-v0.3 | plain | 0.96 | 0.91 | 0.99 | 0.94 | 0.99 | 0.94 | 0.91 |
+| UA-NAZ | Каскад XLM-R(T) → Mistral-7B-v0.3 | defended | 0.96 | 0.93 | 0.99 | 0.94 | 0.99 | 0.94 | 0.91 |
+| UA-NAZ | Паралельний XLM-R ∨ Qwen2.5-7B | plain | 0.97 | 0.94 | 0.99 | 0.99 | 0.99 | 0.93 | 0.90 |
+| UA-NAZ | Паралельний XLM-R ∨ Qwen2.5-7B | defended | 0.97 | 0.94 | 0.99 | 0.99 | 1.00 | 0.93 | 0.90 |
+| UA-NAZ | Паралельний XLM-R ∨ Llama-3.1-8B | plain | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-NAZ | Паралельний XLM-R ∨ Llama-3.1-8B | defended | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-NAZ | Паралельний XLM-R ∨ Mistral-7B-v0.3 | plain | 1.00 | 0.99 | 0.99 | 1.00 | 1.00 | 1.00 | 0.99 |
+| UA-NAZ | Паралельний XLM-R ∨ Mistral-7B-v0.3 | defended | 1.00 | 1.00 | 0.99 | 1.00 | 1.00 | 1.00 | 0.99 |
+| UA-REAL | TF-IDF + LR | – | 0.45 | 0.35 | 0.32 | 0.45 | 0.45 | 0.35 | 0.29 |
+| UA-REAL | XLM-R (одна контрольна точка) | – | 0.58 | 0.58 | 0.90 | 0.90 | 0.90 | 0.48 | 0.45 |
+| UA-REAL | Qwen2.5-7B (промпт) | plain | 0.81 | 0.16 | 0.48 | 0.84 | 0.68 | 0.65 | 0.06 |
+| UA-REAL | Qwen2.5-7B (промпт) | defended | 0.77 | 0.39 | 0.58 | 0.65 | 0.65 | 0.77 | 0.26 |
+| UA-REAL | Llama-3.1-8B (промпт) | plain | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-REAL | Llama-3.1-8B (промпт) | defended | 0.97 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-REAL | Mistral-7B-v0.3 (промпт) | plain | 1.00 | 0.97 | 0.77 | 0.90 | 0.84 | 1.00 | 0.68 |
+| UA-REAL | Mistral-7B-v0.3 (промпт) | defended | 1.00 | 1.00 | 0.90 | 0.97 | 0.94 | 1.00 | 0.87 |
+| UA-REAL | Каскад XLM-R(T) → Qwen2.5-7B | plain | 0.65 | 0.52 | 0.90 | 0.90 | 0.90 | 0.58 | 0.42 |
+| UA-REAL | Каскад XLM-R(T) → Qwen2.5-7B | defended | 0.61 | 0.58 | 0.94 | 0.90 | 0.90 | 0.61 | 0.48 |
+| UA-REAL | Каскад XLM-R(T) → Llama-3.1-8B | plain | 0.74 | 0.81 | 0.94 | 0.94 | 0.94 | 0.68 | 0.68 |
+| UA-REAL | Каскад XLM-R(T) → Llama-3.1-8B | defended | 0.74 | 0.81 | 0.94 | 0.94 | 0.94 | 0.68 | 0.68 |
+| UA-REAL | Каскад XLM-R(T) → Mistral-7B-v0.3 | plain | 0.74 | 0.81 | 0.94 | 0.94 | 0.94 | 0.68 | 0.68 |
+| UA-REAL | Каскад XLM-R(T) → Mistral-7B-v0.3 | defended | 0.74 | 0.81 | 0.94 | 0.94 | 0.94 | 0.68 | 0.68 |
+| UA-REAL | Паралельний XLM-R ∨ Qwen2.5-7B | plain | 0.87 | 0.71 | 0.90 | 0.97 | 1.00 | 0.84 | 0.61 |
+| UA-REAL | Паралельний XLM-R ∨ Qwen2.5-7B | defended | 0.87 | 0.74 | 0.94 | 0.94 | 1.00 | 0.90 | 0.71 |
+| UA-REAL | Паралельний XLM-R ∨ Llama-3.1-8B | plain | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-REAL | Паралельний XLM-R ∨ Llama-3.1-8B | defended | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
+| UA-REAL | Паралельний XLM-R ∨ Mistral-7B-v0.3 | plain | 1.00 | 1.00 | 0.97 | 0.97 | 0.97 | 1.00 | 0.97 |
+| UA-REAL | Паралельний XLM-R ∨ Mistral-7B-v0.3 | defended | 1.00 | 1.00 | 1.00 | 0.97 | 1.00 | 1.00 | 0.97 |
+
 ## URL loss in translation
 
 Within the first 1200 characters that the models received, URLs survived translation in 59 of 63 UA-MT emails and 15 of 16 UA-NAZ emails; excluding the emails with lost URLs changes F1 of any model by at most 0.006 (`results/url_loss_analysis.csv`, `derived/url_loss_ua_naz.csv`). The 77% in `run_info.json` (`ua_mt_url_kept`) counts URLs anywhere in the full source text, including the part beyond 1200 characters that was never translated or shown to any model.
