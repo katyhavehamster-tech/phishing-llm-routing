@@ -1,0 +1,48 @@
+{
+  "title": "Code and data for the article \"Architectural approaches to applying language models for detecting phishing and unwanted emails\"",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Luchyk, Vasyl",
+      "affiliation": "Kharkiv National University of Internal Affairs",
+      "orcid": "0000-0001-6007-910X"
+    },
+    {
+      "name": "Nosov, Vitalii",
+      "affiliation": "Kharkiv National University of Internal Affairs",
+      "orcid": "0000-0002-7848-6448"
+    },
+    {
+      "name": "Vitvitska, Kateryna",
+      "affiliation": "Kharkiv National University of Internal Affairs",
+      "orcid": "0009-0005-9932-1289"
+    },
+    {
+      "name": "Manzhai, Iryna",
+      "affiliation": "Kharkiv National University of Internal Affairs",
+      "orcid": "0000-0003-2664-4472"
+    }
+  ],
+  "description": "Code, saved predictions, results and reproducibility scripts for the article «Архітектурні підходи до застосування мовних моделей для виявлення фішингових і небажаних електронних листів» (Luchyk V. Ye., Nosov V. V., Vitvitska K. E.). Comparison of TF-IDF logistic regression, fine-tuned XLM-RoBERTa, prompt-based Qwen2.5-7B-Instruct (plus Llama-3.1-8B-Instruct and Mistral-7B-Instruct-v0.3) and cascade/parallel hybrid schemes on English, machine-translated Ukrainian and real Ukrainian messages; adversarial modifications and instruction injection. Texts of the real Ukrainian messages (UA-REAL) are not redistributed. Results and metadata: CC BY 4.0.",
+  "keywords": [
+    "phishing detection",
+    "large language models",
+    "XLM-RoBERTa",
+    "hybrid detection systems",
+    "prompt injection",
+    "Ukrainian"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23326929",
+      "relation": "isSupplementedBy",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://github.com/katyhavehamster-tech/phishing-llm-routing",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    }
+  ]
+}

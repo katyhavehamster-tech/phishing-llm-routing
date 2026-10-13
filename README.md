@@ -3,6 +3,10 @@
 Reproducibility package for the article «Архітектурні підходи до застосування мовних моделей для виявлення фішингових
 і небажаних електронних листів» (Luchyk V. Ye., Nosov V. V., Vitvitska K. E.).
 
+Authors of the code and data package: Luchyk V. Ye. (Лучик В. Є.), Nosov V. V. (Носов В. В.), Vitvitska K. E. (Вітвіцька К. Е.),
+Manzhai I. A. (Манжай І. А.); Kharkiv National University of Internal Affairs. How to cite: `CITATION.cff`.
+Supplement A (Tables A1–A6) is archived on Zenodo: https://doi.org/10.5281/zenodo.23326929
+
 ## Contents
 - `phishing_llm_experiment_v6.ipynb` – full experiment (Google Colab, NVIDIA T4). Run all cells; intermediate state is cached on Google Drive.
 - `results/` – outputs of the run used in the article: `results_main.csv` (metrics, Wilson CIs), `stats_diff.csv`
