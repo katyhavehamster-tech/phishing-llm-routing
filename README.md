@@ -1,9 +1,9 @@
 # Phishing / unwanted email detection with language models: routing experiment (v6.3)
 
 Reproducibility package for the article «Архітектурні підходи до застосування мовних моделей для виявлення фішингових
-і небажаних електронних листів» (Luchyk V. Ye., Nosov V. V., Vitvitska K. E.).
+і небажаних електронних листів» (Luchyk V. Ye., Nosov V. V., Vitvitska K. E., Manzhai I. A.).
 
-Authors of the code and data package: Luchyk V. Ye. (Лучик В. Є.), Nosov V. V. (Носов В. В.), Vitvitska K. E. (Вітвіцька К. Е.),
+Authors: Luchyk V. Ye. (Лучик В. Є.), Nosov V. V. (Носов В. В.), Vitvitska K. E. (Вітвіцька К. Е.),
 Manzhai I. A. (Манжай І. А.); Kharkiv National University of Internal Affairs. How to cite: `CITATION.cff`.
 Supplement A (Tables A1–A6) is archived on Zenodo: https://doi.org/10.5281/zenodo.23326929
 

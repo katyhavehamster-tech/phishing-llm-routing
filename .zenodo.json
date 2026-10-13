@@ -24,7 +24,7 @@
       "orcid": "0000-0003-2664-4472"
     }
   ],
-  "description": "Code, saved predictions, results and reproducibility scripts for the article «Архітектурні підходи до застосування мовних моделей для виявлення фішингових і небажаних електронних листів» (Luchyk V. Ye., Nosov V. V., Vitvitska K. E.). Comparison of TF-IDF logistic regression, fine-tuned XLM-RoBERTa, prompt-based Qwen2.5-7B-Instruct (plus Llama-3.1-8B-Instruct and Mistral-7B-Instruct-v0.3) and cascade/parallel hybrid schemes on English, machine-translated Ukrainian and real Ukrainian messages; adversarial modifications and instruction injection. Texts of the real Ukrainian messages (UA-REAL) are not redistributed. Results and metadata: CC BY 4.0.",
+  "description": "Code, saved predictions, results and reproducibility scripts for the article «Архітектурні підходи до застосування мовних моделей для виявлення фішингових і небажаних електронних листів» (Luchyk V. Ye., Nosov V. V., Vitvitska K. E., Manzhai I. A.). Comparison of TF-IDF logistic regression, fine-tuned XLM-RoBERTa, prompt-based Qwen2.5-7B-Instruct (plus Llama-3.1-8B-Instruct and Mistral-7B-Instruct-v0.3) and cascade/parallel hybrid schemes on English, machine-translated Ukrainian and real Ukrainian messages; adversarial modifications and instruction injection. Texts of the real Ukrainian messages (UA-REAL) are not redistributed. Results and metadata: CC BY 4.0.",
   "keywords": [
     "phishing detection",
     "large language models",
@@ -44,5 +44,7 @@
       "relation": "isIdenticalTo",
       "scheme": "url"
     }
-  ]
+  ],
+  "version": "v1.0",
+  "language": "eng"
 }
